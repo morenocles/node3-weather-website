@@ -27,7 +27,7 @@ app.use(express.static(publicDirectory))
 
 app.get('',(req,res)=>{
     res.render('index',{
-        title: 'Wheater',
+        title: 'El clima en tu ciudad',
         name: 'Luis Alfredo Aguilar Hernandez'
     })
 })
@@ -42,7 +42,7 @@ app.get('/about',(req,res)=>{
 app.get('/help',(req,res)=>{
     res.render('help',{
         helpText: 'mensaje de ayuda',
-        title : 'Help',
+        title : 'Ayuda',
         name: 'Luis Alfredo Aguilar Hernandez'
     })
 })

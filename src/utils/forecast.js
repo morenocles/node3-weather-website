@@ -15,6 +15,7 @@ const forectast = (latitude,longitude,callback)=>{
         }else{
             callback(undefined,{
                 placename : body.daily.data[0].summary,
+                weatherTomorrow : body.daily.data[1].summary,
                 temperature : body.currently.temperature,
                 Rainchance :  body.currently.precipProbability
                 }

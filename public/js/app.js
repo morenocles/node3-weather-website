@@ -14,6 +14,7 @@ const error=document.querySelector('#errroMsg')
 const mesaage=document.querySelector('#message')
 const wheaterP=document.querySelector('#weather')
 const temperature=document.querySelector('#temperature')
+const weatherTomorrow=document.querySelector('#tomorrowWeather')
 
 wehaterform.addEventListener('submit',(e)=>{
 
@@ -22,6 +23,7 @@ wehaterform.addEventListener('submit',(e)=>{
     mesaage.textContent='Loading ...'
     wheaterP.textContent=''
     temperature.textContent=''
+    weatherTomorrow.textContent=''
 
     const location= search.value
 
@@ -33,9 +35,10 @@ wehaterform.addEventListener('submit',(e)=>{
             }else{
                 console.log(data)
                 error.textContent=''
-                mesaage.textContent='Ciudad: '+data.data.location
-                wheaterP.textContent='Pronostico: '+data.forecast.placename
-                temperature.textContent='Temperatura: '+data.forecast.temperature
+                mesaage.innerHTML='<b>Ciudad: </b>'+data.data.location
+                wheaterP.innerHTML='<b>Pronostico Actual: </b>'+data.forecast.placename
+                temperature.innerHTML='<b>Temperatura: </b>'+data.forecast.temperature
+                weatherTomorrow.innerHTML='<b>Pronostico mañana: </b>'+data.forecast.weatherTomorrow
             }
         })
     })
